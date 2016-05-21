@@ -1,7 +1,7 @@
 {
   "name": "gulp-json-validator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A json validator that has an option to check for duplicated keys",
   "keywords": [
     "jsonvalidator",
     "json",
