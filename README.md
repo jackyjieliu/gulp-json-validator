@@ -2,8 +2,9 @@
 
 A json validator that has an option to check for duplicated keys
 
+## Install
+`npm install gulp-json-validator`
 ## Usage
-
 ```
 var gulpJsonValidator = require('gulp-json-validtor');
 gulp.task('test', function() {
@@ -11,7 +12,6 @@ gulp.task('test', function() {
     .pipe(gulpJsonValidator({ allowDuplicatedKey: true }))
 });
 ```
-
 ### gulpJsonValidator([options])
 #### Options
 ##### allowDuplicatedKeys
