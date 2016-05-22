@@ -1,4 +1,4 @@
-# gulp-json-validator [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/jackyjieliu/gulp-json-validator.svg?branch=master)](https://travis-ci.org/jackyjieliu/gulp-json-validator)
+# gulp-json-validator [![Build Status](https://travis-ci.org/jackyjieliu/gulp-json-validator.svg?branch=master)](https://travis-ci.org/jackyjieliu/gulp-json-validator)
 
 A json validator that has an option to check for duplicated keys
 
