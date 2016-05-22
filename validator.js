@@ -4,13 +4,13 @@ module.exports = {
   parse: parse
 };
 
-function validate(jsonString, allowDuplicatedKey) {
+function validate(jsonString, allowDuplicatedKeys) {
   var error;
   if (typeof jsonString !== 'string') {
     error = 'Input must be a string';
   } else {
     try {
-      _findValue(jsonString, 0, allowDuplicatedKey);
+      _findValue(jsonString, 0, allowDuplicatedKeys);
     } catch(e) {
       error = e.message;
     }
@@ -18,11 +18,11 @@ function validate(jsonString, allowDuplicatedKey) {
   return error;
 }
 
-function parse(jsonString, allowDuplicatedKey) {
+function parse(jsonString, allowDuplicatedKeys) {
   if (typeof jsonString !== 'string') {
     throw new Error('Input must be a string');
   }
-  var value = _findValue(jsonString, 0, allowDuplicatedKey);
+  var value = _findValue(jsonString, 0, allowDuplicatedKeys);
   return value.value;
 }
 
@@ -82,7 +82,7 @@ function _findSemiColonSeparator(str, startInd) {
   };
 }
 
-function _findValue(str, startInd, allowDuplicatedKey) {
+function _findValue(str, startInd, allowDuplicatedKeys) {
   var len = str.length;
   var valueStartInd;
   var valueEndInd;
@@ -136,7 +136,7 @@ function _findValue(str, startInd, allowDuplicatedKey) {
         value = arr.value;
         break;
       } else if (isObject) {
-        var obj = _findObject(str, i, allowDuplicatedKey);
+        var obj = _findObject(str, i, allowDuplicatedKeys);
         valueEndInd = obj.end;
         value = obj.value;
         break;
@@ -213,7 +213,7 @@ function _findKey(str, startInd) {
   };
 }
 
-function _findObject(str, startInd, allowDuplicatedKey) {
+function _findObject(str, startInd, allowDuplicatedKeys) {
   var i = startInd;
   var sepValue = ',';
   var obj = {};
@@ -223,7 +223,7 @@ function _findObject(str, startInd, allowDuplicatedKey) {
     var value = _findValue(str, semi.end);
     var sepIndex = _findSeparator(str, value.end);
 
-    if (!allowDuplicatedKey) {
+    if (!allowDuplicatedKeys) {
       if(obj[key.value] !== undefined) {
         throw _syntaxError(str, key.end, 'duplicated key: ' + key.value);
       }

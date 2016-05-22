@@ -130,7 +130,7 @@ describe('test', function() {
     });
 
     it('should not fail on duplicated keys with config', function(done) {
-      var stream = jsonValidatePlugin({ allowDuplicatedKey: true });
+      var stream = jsonValidatePlugin({ allowDuplicatedKeys: true });
 
       var count = 0;
       stream.on('data', function () {
