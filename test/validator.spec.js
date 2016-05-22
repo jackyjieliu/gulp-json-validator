@@ -75,7 +75,7 @@ describe('test', function() {
 
     it('duplicated keys', function() {
       var content = fs.readFileSync('./test/fixture/duplicated-key.json', 'utf8') ;
-      var errMessage = 'Syntax error: duplicated key: a near "a": 345\n}';
+      var errMessage = 'Syntax error: duplicated keys "a" near "a": 345\n}';
       expect(validator.validate(content, true)).to.equal(undefined);
       expect(validator.validate(content, false)).to.equal(errMessage);
       expect(validator.parse(content, true)).to.deep.equal({

@@ -1,6 +1,6 @@
 {
   "name": "gulp-json-validator",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "A json validator that has an option to check for duplicated keys",
   "keywords": [
     "jsonvalidator",
@@ -11,14 +11,14 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "backslash": "^0.2.0"
+    "backslash": "^0.2.0",
+    "gulp-util": "^3.0.7",
+    "map-stream": "0.0.6"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^2.2.0",
-    "gulp-util": "^3.0.7",
-    "map-stream": "0.0.6",
     "mocha": "^2.4.5"
   },
   "scripts": {

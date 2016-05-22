@@ -225,7 +225,7 @@ function _findObject(str, startInd, allowDuplicatedKeys) {
 
     if (!allowDuplicatedKeys) {
       if(obj[key.value] !== undefined) {
-        throw _syntaxError(str, key.end, 'duplicated key: ' + key.value);
+        throw _syntaxError(str, key.end, 'duplicated keys "' + key.value + '"');
       }
     }
     obj[key.value] = value.value;
