@@ -11,15 +11,16 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "gulp-util": "^3.0.7",
     "json-dup-key-validator": "^1.0.0",
-    "map-stream": "0.0.6"
+    "map-stream": "0.0.7",
+    "plugin-error": "^1.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^2.2.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "vinyl": "^2.1.0"
   },
   "scripts": {
     "test": "gulp"
