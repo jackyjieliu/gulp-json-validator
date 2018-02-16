@@ -1,4 +1,4 @@
-var gutil = require('gulp-util');
+var Vinyl = require('vinyl');
 var fs = require('fs');
 var path = require('path');
 var expect = require('chai').expect;
@@ -8,7 +8,7 @@ describe('test', function() {
   describe('plugin', function() {
     var file;
     beforeEach(function() {
-      file = new gutil.File({
+      file = new Vinyl({
         path: path.join(__dirname, './fixture/duplicated-key.json'),
         cwd: __dirname,
         base: path.join(__dirname, './fixture') ,

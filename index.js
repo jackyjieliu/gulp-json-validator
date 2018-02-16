@@ -1,5 +1,5 @@
 var mapStream = require('map-stream');
-var PluginError = require('gulp-util').PluginError;
+var PluginError = require('plugin-error');
 var validator = require('json-dup-key-validator');
 
 module.exports = gulpJsonValidator;
